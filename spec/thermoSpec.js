@@ -12,7 +12,8 @@ describe("Thermostat", function() {
   });
 
   it("starts at a default of 20 degrees", function() {
-    expect(thermostat.currentTemp()).toEqual(20);
+    expect(thermostat.currentTemp()).toEqual(20)
+    expect(thermostat._color).toEqual("yellow");
   });
 
   it("starts with power save mode on", function() {
@@ -32,6 +33,7 @@ describe("Thermostat", function() {
   it('cannot go below 10', function(){
     thermostat2.downButton()
     expect(thermostat2.currentTemp()).toEqual(10);
+    expect(thermostat2._color).toEqual("green");
   });
 
   it('should got to a max of 25 if power save mode on', function() {
@@ -42,11 +44,18 @@ describe("Thermostat", function() {
   it('should got to a max of 32 if power save mode off', function() {
     thermostat4.upButton()
     expect(thermostat4.currentTemp()).toEqual(32);
+    expect(thermostat4._color).toEqual("red");
   });
 
   it('should turn power saving mode off', function() {
     thermostat.powerSave()
     expect(thermostat._powerSave).toEqual(false);
+  });
+
+  it('should reset temp to 20 when hitting reset button', function() {
+    thermostat.upButton()
+    thermostat.resetButton()
+    expect(thermostat.currentTemp()).toEqual(20);
   });
 
 });
