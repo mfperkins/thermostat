@@ -1,3 +1,5 @@
+'use strict'
+
 const MIN = 10;
 const MAXP = 25;
 const MAX = 32;
@@ -15,8 +17,6 @@ Thermostat.prototype = {
     },
 
     setColor: function () {
-      console.log(this);
-      console.log(this.currentTemp());
       if (this.currentTemp() < 18) {
         this._color = "green";
       } else if (this.currentTemp() > 24) {
