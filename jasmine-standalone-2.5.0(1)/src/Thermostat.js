@@ -1,3 +1,5 @@
+'use-strict';
+
 function Thermostat() {
   this.temperature = 20;
   this.minTemperature = 10;
@@ -16,7 +18,7 @@ Thermostat.prototype = {
   },
 
   decreaseTemperature: function() {
-    if (this.temperature >= this.minTemperature)   {
+    if (this.temperature > this.minTemperature)   {
        this.temperature -- ;
     }
     else { this.temperature = this.minTemperature;}
@@ -30,6 +32,7 @@ Thermostat.prototype = {
 
   reset: function() {
     this.temperature = 20;
+    this.colourChange();
   },
 
   colourChange: function() {
@@ -44,6 +47,4 @@ Thermostat.prototype = {
         this.colour = "red";
     }
   }
-
-
 };

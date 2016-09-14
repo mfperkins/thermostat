@@ -47,7 +47,7 @@ describe('Thermostat', function() {
   describe('temperature limit enforcement', function() {
 
       it("does not let you decrease temperature beyond min limit", function(){
-        helperModule.decrement(12, thermostat);
+        helperModule.decrement(13, thermostat);
         expect(thermostat.temperature).toEqual(10);
       });
 

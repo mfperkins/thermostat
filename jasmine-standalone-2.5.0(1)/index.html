@@ -7,15 +7,22 @@
 </head>
 
 <body>
-  <h1 id='temperature'>Current Temp: </h1>
+
+  <div>
+    <h1>Current Temp: </h1>
+    <h1 id="temperature"></h1>
+  </div>
 
   <div>
     <button id='increaseTemperature'>Increase</button>
     <button id='decreaseTemperature'>Decrease</button>
     <button id='powerSaveSwitch'>PowerSave</button>
     <button id='reset'>Reset</button>
+
   </div>
 
+  <script src="jquery.js"></script>
+  <script src="src/ThermoQuery.js"></script>
   <script src="src/Thermostat.js"></script>
 
 </body>
