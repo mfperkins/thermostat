@@ -6,22 +6,31 @@ $(document).ready(function() {
   $( "#temperature" ).text(myThermo.temperature);
   $("body").css("background-color", myThermo.colour);
 
+  updateTemperature = function() {
+    $( "#temperature" ).text(myThermo.temperature);
+  };
+
+  updateColour = function() {
+    $("body").css("background-color", myThermo.colour);
+  };
+
   $( "#increaseTemperature" ).click(function() {
     myThermo.increaseTemperature();
-    $( "#temperature" ).text(myThermo.temperature);
-    $("body").css("background-color", myThermo.colour);
+    updateTemperature();
+    updateColour();
   });
 
   $( "#decreaseTemperature" ).click(function() {
     myThermo.decreaseTemperature();
-    $( "#temperature" ).text(myThermo.temperature);
-    $("body").css("background-color", myThermo.colour);
+    updateTemperature();
+    updateColour();
   });
 
   $( "#reset" ).click(function() {
     myThermo.reset();
-    $( "#temperature" ).text(myThermo.temperature);
-    $("body").css("background-color", myThermo.colour);
+    updateTemperature();
+    updateColour();
+
   });
 
   $( "#powerSaveSwitch" ).click(function() {
